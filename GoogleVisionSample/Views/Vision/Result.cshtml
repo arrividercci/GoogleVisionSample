@@ -1,0 +1,22 @@
+﻿@model GoogleVisionSample.Models.VisionResultViewModel
+
+@{
+    ViewData["Title"] = "Результат аналізу";
+}
+
+<h2>Розпізнаний текст:</h2>
+<pre>@Model.RecognizedText</pre>
+
+@if (Model.Labels != null && Model.Labels.Any())
+{
+    <h2>Що зображено на фото:</h2>
+    <ul>
+        @foreach (var label in Model.Labels)
+        {
+            <li>@label</li>
+        }
+    </ul>
+}
+
+<!-- Кнопка повернення -->
+<a asp-action="Index" class="btn btn-primary mt-3">Повернутися</a>

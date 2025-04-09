@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Завантажте зображення для аналізу";
+}
+
+<h1>Завантажте зображення для аналізу</h1>
+
+<form enctype="multipart/form-data" method="post" asp-controller="Vision" asp-action="AnalyzeImage">
+    <input type="file" name="file" />
+    <button type="submit">Аналізувати</button>
+</form>
